@@ -49,3 +49,5 @@ Temporary Items
 *.xml
 *.mid
 *.class
+.netbeans_automatic_build
+.netbeans_update_resources

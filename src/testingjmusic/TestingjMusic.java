@@ -56,16 +56,18 @@ public final class TestingjMusic implements JMC{
     public static void main(String[] args){
         Score score = new Score("Random melody");
         Part part = new Part("Piano", PIANO, 0);
-        Phrase phrase = new Phrase(0.0); 
-        
+        Phrase phrase = new Phrase(0.0);
+        int[] pitches = {D4, E4, FS4, G4, A4, B4, CS5, D5};
+        int pitch; 
         for(int i=0; i<48; i++){
-            Note note = new Note((int)(Math.random()*127), QUAVER);
+            pitch = (int) (Math.random()*pitches.length);
+            Note note = new Note(pitches[pitch], QUAVER);
             phrase.addNote(note);
         }
         
         part.addPhrase(phrase);
         score.addPart(part);
-        Write.midi(score, "random.mid");
+        Write.midi(score, "Drandom.mid");
         View.notation(score);
     }
 }
